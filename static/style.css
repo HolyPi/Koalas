@@ -2,7 +2,29 @@ body {
     background-color: lightblue;
   }
 
-.jumbotron {
-    height: 100px !important;
-    width: 50% !important;
+img {
+    padding-left: 70px;
+    max-width:1000px;
+    max-height: 500px;
+}
+
+p {
+    padding-left: 70px;
+}
+
+h2 {
+    padding-left: 70px;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+button {
+    padding-left: 70px;
+    position:absolute;
+    transition: .5s ease;
+    top: 50%;
+    left: 50%;
+    
 }
