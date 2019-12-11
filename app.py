@@ -16,11 +16,15 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    r = requests.get('https://some-random-api.ml/img/red_panda')
+    r = requests.get('https://some-random-api.ml/img/koala')
+    p = requests.get('https://some-random-api.ml/facts/koala')
 
     if r.status_code == 200:
-        rpanda = json.loads(r.content)['link']
-    else:
-        rpanda = ""
+        koala = json.loads(r.content)['link']
+        koalaf = json.loads(p.content)['fact']
 
-    return render_template('index.html', rpanda = rpanda)
+    else:
+        koala = None
+        koalaf = None
+
+    return render_template('index.html', koala = koala, koalaf = koalaf)
