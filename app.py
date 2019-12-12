@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    "Home"
+    "Home/Koala list"
     return render_template('index.html', koalas=koalas.find())
 
 @app.route('/koalas/new')
