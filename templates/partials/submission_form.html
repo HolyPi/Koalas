@@ -2,26 +2,22 @@
 {% block content %}
 
 <div class="jumbotron vertical-center">
-<div class="container">
+    <div class="container">
 
-<form method='POST' action='/koalas'>
-    <fieldset>
-    <legend>Koala</legend>
-      
-
-<div>
-    <label for='name'>Name</label><br>
-    <input id='name' type='text' name='name' value='{{ koala.name }}'/>
+            <legend>Koala</legend>
+            <p>
+                <label for='name'>Name</label><br>
+                <input type='text' name='name' />
+            </p>
+            <p>
+                <label for='description'>Koala's description</label><br>
+                <input type='text' name='description' />
+            </p>
+            <p> 
+            <label for='url'>Koala Image (URL)</label><br>
+            <input type='url' name='url' />
+            </p>
 </div>
-
-<div>
-    <label for='description'>Description</label><br>
-    <input id='description' type='text' name='description' value='{{ koala.description }}'/>
-</div>
-
-<div>
-    <label for='image'>Image URL</label><br>
-    <input id='image' type='text' name='image' value='{{ koala.image }}'/>
 </div>
 {% endblock %}
 {% extends 'base.html' %}

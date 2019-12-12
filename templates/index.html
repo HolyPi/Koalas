@@ -4,9 +4,9 @@
 <h1>Koalas</h1>
 
 {% for koala in koalas %}
-    <h2><a href= '/koalas/{{ koala._id }}'>{{ koala.name }}</h2></a>
-    <strong>{{ koala.description }}</strong>
-    <img class='image' src="{{ koala.image }}">
+    <h3><a href= '/koalas/{{ koala._id }}'>{{ koala.name }}</h3></a>
+    <h5><strong>{{ koala.description }}</strong></h5>
+    <img class='image' src="{{ koala.url }}">
 {% endfor %}
 {% endblock %}
 {% extends 'base.html' %}
