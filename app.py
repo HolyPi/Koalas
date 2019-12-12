@@ -83,3 +83,6 @@ def koala_delete(koala_id):
     """Deletes a koala."""
     koalas.delete_one({'_id': ObjectId(koala_id)})
     return redirect(url_for('index'))
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
