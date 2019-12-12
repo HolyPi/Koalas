@@ -48,6 +48,28 @@ class KoalasTests(TestCase):
          self.assertEqual(result.status, '302 FOUND')
          mock_insert.assert_called_with(sample_koala)
 
+    @mock.patch('pymongo.collection.Collection.find_one')
+    def test_show_koala(self, mock_find):
+        """Test showing a single koala."""
+        mock_find.return_value = sample_koala
+
+        result = self.client.get(f'/koalas/{sample_koala_id}')
+        self.assertEqual(result.status, '200 OK')
+    
+    @mock.patch('pymongo.collection.Collection.update_one')
+    def test_update_koala(self, mock_update):
+        result = self.client.post(f'/koalas/{sample_koala_id}', data=sample_form_data)
+
+        self.assertEqual(result.status, '302 FOUND')
+        mock_update.assert_called_with({'_id': sample_koala_id}, {'$set': sample_koala})
+
+    @mock.patch('pymongo.collection.Collection.delete_one')
+    def test_delete_koala(self, mock_delete):
+        form_data = {'_method': 'DELETE'}
+        result = self.client.post(f'/koalas/{sample_koala_id}/delete', data=form_data)
+        self.assertEqual(result.status, '302 FOUND')
+        mock_delete.assert_called_with({'_id': sample_koala_id})
+
 
 
 
