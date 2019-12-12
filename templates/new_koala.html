@@ -1,0 +1,14 @@
+<!-- templates/new_koala.html -->
+{% include 'partials/navbar.html' %}
+{% block content %}
+<div class="jumbotron vertical-center">
+    <div class="container">
+<form method='POST' action='/koalas'>
+{% include 'partials/submission_form.html' %}
+<button type='submit'>Save</button>
+    </p>
+</form>
+</div>
+</div>
+{% endblock %}
+{% extends 'base.html' %}

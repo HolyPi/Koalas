@@ -1,0 +1,17 @@
+<!-- templates/koalas_edit.html -->
+
+{% block content %}
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <form method='POST' action='/koalas/{{koala._id}}'>
+            <input type='hidden' name='_method' value='PUT'/>
+            {% include 'partials/submission_form.html' %}
+            <div class='form-group'>
+                </div>
+            <button type='submit'>Save Edit</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
+{% extends 'base.html' %}

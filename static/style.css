@@ -1,5 +1,7 @@
 body {
-    background-color: lightblue;
+    min-height: 140px;
+    background-image: url('photo1.png');
+
   }
 
 img {
@@ -20,11 +22,18 @@ h1 {
     padding-top: 20px;
     padding-left: 20px;
 }
-button {
+a {
     padding-left: 70px;
-    position:absolute;
-    transition: .5s ease;
+    transition: .15s ease;
     top: 50%;
     left: 50%;
     
 }
+
+.vertical-center {
+    min-height: 100%;  
+    min-height: 100vh; 
+  
+    display: flex;
+    align-items: center;
+  }

@@ -1,15 +1,12 @@
+<!-- templates/index.html -->
+{% include 'partials/navbar.html' %}
+{% block content %}
+<h1>Koalas</h1>
+
+{% for koala in koalas %}
+    <h2><a href= '/koalas/{{ koala._id }}'>{{ koala.name }}</h2></a>
+    <strong>{{ koala.description }}</strong>
+    <img class='image' src="{{ koala.image }}">
+{% endfor %}
+{% endblock %}
 {% extends 'base.html' %}
-<html>
-    <head>
-        <title>
-            Koala shop
-        </title>
-
-    </head>
-    <body>
-        {% include 'partials/navbar.html' %}
-        
-        {% include 'koala.html' %}
-
-
-</html>
